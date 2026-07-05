@@ -1,0 +1,27 @@
+[user]
+    name = Matias Blanc
+    email = matias.f.blanc@gmail.com
+
+[init]
+    # Define 'main' como la rama por defecto al iniciar nuevos repositorios
+    defaultBranch = main
+
+[core]
+    # Usa Neovim como el editor por defecto para los mensajes de commit
+    editor = nvim
+
+[color]
+    # Activa los colores en la terminal para que sea más fácil leer los logs
+    ui = auto
+
+[pull]
+    # Define el comportamiento por defecto al hacer 'git pull' para evitar advertencias
+    rebase = false
+
+[alias]  
+    st = status
+    co = checkout
+    br = branch
+    cm = commit -m
+    psM = push origin main
+    logline = log --oneline --graph --decorate --all

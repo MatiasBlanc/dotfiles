@@ -18,10 +18,10 @@
     # Define el comportamiento por defecto al hacer 'git pull' para evitar advertencias
     rebase = false
 
-[alias]  
+[alias]
+   [alias]
     st = status
     co = checkout
-    br = branch
+    pu = push
     cm = commit -m
-    psM = push origin main
-    logline = log --oneline --graph --decorate --all
+    pl = pull 

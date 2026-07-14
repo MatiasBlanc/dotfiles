@@ -1,0 +1,88 @@
+# 1. Configuración de formato general
+format = """
+$username\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$python\
+$nodejs\
+$rust\
+$golang\
+$php\
+$java\
+$cmd_duration\
+$time\
+\n$character
+"""
+
+# 2. El "Relleno" mágico para alinear a la derecha
+[fill]
+symbol = " "
+
+# 3. Colores de la paleta Tokyo Night Storm aplicada
+# BG principal: #1f2335 | FG principal: #8089b3 | Acentos: #7aa2f7, #bb9af7, #73daca, #e0af68
+
+[username]
+show_always = true
+style_user = "bg:#7aa2f7 fg:#1f2335"
+format = "[](bg:none fg:#7aa2f7)[@$user: ]($style)"
+
+[directory]
+style = "bg:#7aa2f7 fg:#1f2335"
+truncation_length = 3
+truncation_symbol = "./"
+format = "[$path]($style)[](bg:none fg:#7aa2f7) "
+
+[git_branch]
+# Fondo Púrpura (#bb9af7), Texto oscuro (#1f2335)
+symbol = ""
+style = "bg:#bb9af7 fg:#1f2335"
+format = "[](bg:none fg:#bb9af7)[ $symbol$branch ]($style)[](bg:none fg:#bb9af7) "
+
+[git_status]
+ahead = "⇡"
+behind = "⇣"
+diverged = "⇕"
+format = "([$ahead$behind$diverged](bold #f7768e) )" # Rojo Tokyo Night
+
+[cmd_duration]
+min_time = 2000
+format = "[$duration](fg:#e0af68) " # Amarillo Tokyo Night
+
+[time]
+disabled = false
+time_format = "%R"
+style = "fg:#8089b3"       # Foreground base
+format = "[$time]($style)"
+
+[character]
+success_symbol = "[➜](bold #73daca)" # Verde Tokyo Night
+error_symbol = "[✗](bold #f7768e)"   # Rojo Tokyo Night
+
+[custom.ia_cost]
+# Fondo Amarillo (#e0af68), Texto oscuro (#1f2335)
+format = "[](bg:none fg:#e0af68)[ $output ]($style)[](bg:none fg:#e0af68) "
+style = "bg:#e0af68 fg:#1f2335"
+when = "test -f ~/.ia_logs/costo_actual.txt"
+
+# --- Lenguajes con colores de la paleta ---
+[python]
+symbol = " "
+style = "bold #e0af68"
+format = "[$symbol$version]($style) "
+
+[nodejs]
+symbol = " "
+style = "bold #73daca"
+format = "[$symbol$version]($style) "
+
+[golang]
+symbol = " "
+style = "bold #7dcfff"
+format = "[$symbol$version]($style) "
+
+[rust]
+symbol = " "
+style = "bold #f7768e"
+format = "[$symbol$version]($style) "

@@ -1,0 +1,42 @@
+# ==========================================
+# CONFIGURACIÓN BASE DE KITTY
+# ==========================================
+
+# --- 1. FUENTES ---
+font_family      monospace
+font_size        12.0
+disable_ligatures never
+
+# --- 2. DISEÑO Y PANELES (Para tus Agentes) ---
+# Habilita el modo 'splits' (divisiones) y 'stack' (pantalla completa para un panel)
+enabled_layouts splits, stack
+
+# Margen interior para que el texto no pegue con los bordes
+window_padding_width 4
+
+# atajos para copiar y pegar
+map ctrl+c copy_or_interrupt
+map ctrl+v paste_from_clipboard
+
+# Atajos para dividir la pantalla más intuitivos
+map ctrl+shift+h launch --location=hsplit
+map ctrl+shift+v launch --location=vsplit
+
+# Atajos para cambiar el foco (interactuar) entre paneles
+map ctrl+shift+up    neighboring_window up
+map ctrl+shift+left  neighboring_window left
+map ctrl+shift+right neighboring_window right
+map ctrl+shift+down  neighboring_window down
+
+# --- 3. ALERTAS Y SONIDOS ---
+# Desactiva el molesto "beep" sonoro
+enable_audio_bell no
+# Activa un ligero parpadeo visual en la ventana cuando hay una alerta (como cuando un script falla)
+visual_bell_duration 0.1
+
+# --- 4. APARIENCIA ---
+# Ligeramente transparente (requiere Wayland o un compositor en X11)
+background_opacity 0.95
+
+# --- TEMA ---
+include tokyonight.conf

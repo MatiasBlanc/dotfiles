@@ -32,3 +32,10 @@ alias idea='~/programas/idea-2026.1.4/idea-IU-261.26222.65/bin/idea.sh'
 
 export PATH=~/.npm-global/bin:$PATH
 export PATH="/home/mblanc/.local/bin:$PATH"
+
+# bun completions
+[ -s "/home/mblanc/.bun/_bun" ] && source "/home/mblanc/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

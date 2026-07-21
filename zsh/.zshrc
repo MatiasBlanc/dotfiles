@@ -27,7 +27,6 @@ eval "$(starship init zsh)"
 # --- Opciones básicas ---
 setopt autocd
 
-alias code="flatpak run com.visualstudio.code"
 alias idea='~/programas/idea-2026.1.4/idea-IU-261.26222.65/bin/idea.sh'
 
 export PATH=~/.npm-global/bin:$PATH
